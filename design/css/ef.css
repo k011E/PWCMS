@@ -1,0 +1,21 @@
+.lst a[href^="http"] {
+   background: url(/design/images/url_and_ftp.png) no-repeat;
+   padding-left: 18px;
+}
+.lst a.urlFail {
+   background: url(/design/images/urlN.png) no-repeat !important;
+   padding-left: 18px !important;
+}
+.lst a.urlSuccess {
+   background: url(/design/images/urlS.png) no-repeat !important;
+   padding-left: 18px !important;
+}
+
+.lst a.wmLink {
+   background: url(/design/images/wm.png) no-repeat !important;
+   padding-left: 18px !important;
+}
+
+img {
+    vertical-align: middle;
+}
