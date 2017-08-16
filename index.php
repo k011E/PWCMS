@@ -87,7 +87,7 @@ if(!isset($user['id'])){
 	</div>
 	<div class="list1">
 		<img src="/design/images/acn.gif"> <a href="/kab">Личный кабинет</a><br>
-		<img src="/design/images/coins.png"> <a href="/kab/money.php">Моя панель</a><br>
+		<img src="/design/images/coins.png"> <a href="/billing">Моя панель</a><br>
 		<img src="/design/images/acn.gif"> <a href="/im.php">Именниники</a><br>
 		<img src="/design/images/acn.gif"> <a href="/len.php">Новости пользователей</a>(10/100) <font color="red"><b>+1</b></font><br>
 		<?if($user['admin']>=1){?>

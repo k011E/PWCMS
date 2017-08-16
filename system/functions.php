@@ -73,17 +73,21 @@ function nick($id){
 		$out = 'Удалён';
 	}else{
 		$us = $query->fetch_assoc();
-		if($us['online']>time()-3600){
-			if($us['sex']='Муж'){
-				$icon = '<img src="/design/images/mon.png"> ';
-			}else{
-				$icon = '<img src="/design/images/jon.png"> ';
-			}
+		if(!empty($us['icon'])){
+			$icon = '<img src="/files/icon/'.$us['id'].'.png" style="width: 16px; height: 16px;"> ';
 		}else{
-			if($us['sex']=='Муж'){
-				$icon = '<img src="/design/images/mof.png"> ';
+			if($us['online']>time()-3600){
+				if($us['sex']='Муж'){
+					$icon = '<img src="/design/images/mon.png"> ';
+				}else{
+					$icon = '<img src="/design/images/jon.png"> ';
+				}
 			}else{
-				$icon = '<img src="/design/images/jof.png"> ';
+				if($us['sex']=='Муж'){
+					$icon = '<img src="/design/images/mof.png"> ';
+				}else{
+					$icon = '<img src="/design/images/jof.png"> ';
+				}
 			}
 		}
 	}
@@ -271,6 +275,10 @@ function where($id) {
 
 		case 'mail':
 			$where = 'Почта';
+			break;
+
+		case 'billing';
+			$where = 'Биллинг';
 			break;
 
 		default:

@@ -30,6 +30,8 @@ RewriteRule ^admin/smiles/r/([0-9]*)/edit/?$ modules/admin/smiles/edit_r.php?id=
 RewriteRule ^admin/smiles/edit_smile/([0-9]*)/?$ modules/admin/smiles/edit_smile.php?id=$1 [L,QSA]
 RewriteRule ^admin/smiles/del_smile/([0-9]*)/?$ modules/admin/smiles/del_smile.php?id=$1 [L,QSA]
 RewriteRule ^admin/system/info_system/?$ modules/admin/system/info_system.php [L,QSA]
+RewriteRule ^admin/billing/?$ modules/admin/billing/index.php [L,QSA]
+RewriteRule ^admin/billing/prices/?$ modules/admin/billing/prices.php [L,QSA]
 
 RewriteRule ^kab/?$ modules/kab/index.php [L,QSA]
 RewriteRule ^kab/lich/?$ modules/kab/lich.php [L,QSA]
@@ -227,3 +229,7 @@ RewriteRule ^mail/files/user/([0-9]*)/?$ modules/mail/files_user.php?id=$1 [L,QS
 RewriteRule ^mail/files/user/([0-9]*)/page([0-9]*)/?$ modules/mail/files_user.php?id=$1&page=$2 [L,QSA]
 
 RewriteRule ^billing/?$ modules/billing/index.php [L,QSA]
+RewriteRule ^billing/fund/?$ modules/billing/fund.php [L,QSA]
+RewriteRule ^billing/services/?$ modules/billing/services/index.php [L,QSA]
+RewriteRule ^billing/services/change_nick/?$ modules/billing/services/change_nick.php [L,QSA]
+RewriteRule ^billing/services/icon/?$ modules/billing/services/icon.php [L,QSA]

@@ -19,6 +19,7 @@ admin(1);
 		Панель создателя
 	</div>
 	<div class="lst"><a href="/admin/system/info_system">Информация о CMS</a></div>
+	<div class="lst"><a href="/admin/billing">Управление биллингом</a></div>
 	<?
 }?>
 
