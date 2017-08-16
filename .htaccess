@@ -225,3 +225,5 @@ RewriteRule ^mail/favorite/list/?$ modules/mail/favorite/list.php [L,QSA]
 RewriteRule ^mail/favorite/list/page([0-9]*)/?$ modules/mail/favorite/list.php?page=$1 [L,QSA]
 RewriteRule ^mail/files/user/([0-9]*)/?$ modules/mail/files_user.php?id=$1 [L,QSA]
 RewriteRule ^mail/files/user/([0-9]*)/page([0-9]*)/?$ modules/mail/files_user.php?id=$1&page=$2 [L,QSA]
+
+RewriteRule ^billing/?$ modules/billing/index.php [L,QSA]
