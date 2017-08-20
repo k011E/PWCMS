@@ -91,7 +91,11 @@ function nick($id){
 			}
 		}
 	}
-	$nick = '<a href="/us'.$us['id'].'" style="text-decoration: none; color: black;"><b>'.$Filter->output($us['nick']).'</b></a>';
+	if(!empty($us['color1']) AND !empty($us['color2'])){
+		$nick = '<a href="/us'.$us['id'].'" style="text-decoration: none; color: black;"><b>'.gradient($Filter->output($us['nick']), $us['color1'], $us['color2']).'</b></a>';
+	}else{
+		$nick = '<a href="/us'.$us['id'].'" style="text-decoration: none; color: black;"><b>'.$Filter->output($us['nick']).'</b></a>';
+	}
 	if($us['admin'] == 1){
 		$st = 'мд';
 	}elseif($us['admin'] == 2){
@@ -561,5 +565,52 @@ function new_bb($mes){
     $mes = preg_replace("~(^|\s|-|:|\(| |\xAB)(http(s?)://|(www\.))((\S+)([^\<\s.,>)\];'\"!?]))~i", "\\1<a href=\"http\\3://\\4\\5\">\\4\\5</a>", $mes);
 
     return $mes;
+}
+
+function gradient ($string, $from = '', $to = '')
+{
+        
+        $string = iconv ('utf-8', 'windows-1251', $string);
+        
+        
+        //
+        $to   = array (
+                hexdec ($to[0] . $to[1]),     // r
+                hexdec ($to[2] . $to[3]),     // g
+                hexdec ($to[4] . $to[5])      // b
+        );
+        
+        
+        //
+        $from = array (
+                hexdec ($from[0] . $from[1]), // r
+                hexdec ($from[2] . $from[3]), // g
+                hexdec ($from[4] . $from[5])  // b
+        );
+        
+        $levels = strlen ($string);
+
+
+        for ($i = 1; $i <= $levels; $i++) {
+                
+                for ($ii = 0; $ii < 3; $ii++) {
+                        $tmp[ $ii ] = $from[ $ii ] - $to[ $ii ];
+                        $tmp[ $ii ] = floor ($tmp[ $ii ] / $levels);
+                        $rgb[ $ii ] = $from[ $ii ] - ($tmp[ $ii ] * $i);
+                        if ($rgb[ $ii ] > 255) {
+                                $rgb[ $ii ] = 255;
+                        }
+                        $rgb[ $ii ] = dechex ($rgb[ $ii ]);
+                        if (strlen($rgb[ $ii ]) < 2) {
+                                $rgb[ $ii ] = '0' . $rgb[ $ii ];
+                        }
+                }
+        
+                $out .= '<span style="color: #' . $rgb[0] . $rgb[1] . $rgb[2] . '">' . $string[ $i - 1 ] . '</span>';
+                
+        }
+		
+        return iconv ('windows-1251', 'utf-8', $out);
+        
 }
 ?>
