@@ -141,6 +141,20 @@ while ($p = $query->fetch_assoc()) {
 		}
 		?>
 		<?=$Filter->outputText($p['msg'])?>
+		<?
+		$pus = $db->query("SELECT * FROM `users` WHERE `id`=".$p['id_us']."")->fetch_assoc();
+		if(!empty($pus['status'])){
+			?>
+			<br><b>Статус: 
+			<?
+			if(!empty($pus['color1']) AND !empty($pus['color2'])){
+				echo gradient($Filter->output($pus['status']), $pus['color1'], $pus['color2']);
+			}else{
+				echo $Filter->output($pus['status']);
+			}
+			?></b><?
+		}
+		?>
 		<?if($user['admin']>=3 AND $p['type']==1){?><br><font color="red"><b>пост удалил <?=nick($p['del_us'])?></b></font>[<a href="/forum/recovery_post/<?=$p['id']?>/<?=$_GET['page']?>">вос</a>]<br><?}?>
 		<?if($p['rec_us']>=1 AND $user['admin']>=3){?>
 			<br><font color="green"><b>пост восстановил <?=nick($p['rec_us'])?></b></font>

@@ -235,3 +235,4 @@ RewriteRule ^billing/services/change_nick/?$ modules/billing/services/change_nic
 RewriteRule ^billing/services/icon/?$ modules/billing/services/icon.php [L,QSA]
 RewriteRule ^billing/services/gradient/?$ modules/billing/services/gradient.php [L,QSA]
 RewriteRule ^billing/services/gradient/delete/?$ modules/billing/services/gradient.php?del [L,QSA]
+RewriteRule ^billing/services/status/?$ modules/billing/services/status.php [L,QSA]

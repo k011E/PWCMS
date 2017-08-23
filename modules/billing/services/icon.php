@@ -38,6 +38,13 @@ if(!empty($user['icon'])){
 	$Upload = new Upload('icon', $user['id'], 'png', 1, 'png', '' , 'billing/services/icon?success');
 	?>
 </div>
+<div class="navg">
+	<a href="/billing/services/">Услуги</a>
+</div>
+<div class="navg">
+	<img src="/design/images/home0.png">
+	<a href="/billing">Моя панель</a>
+</div>
 <?
 include_once($_SERVER["DOCUMENT_ROOT"].'/design/foot.php');
 ?>

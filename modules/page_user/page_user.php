@@ -43,7 +43,9 @@ switch ($us['admin']) {
 		break;
 }
 
-if($us['rating']<'0.21'){
+if(!empty($us['status'])){
+	$status = $us['status'];
+}elseif($us['rating']<'0.21'){
 	$status = 'Новичок';
 }elseif($us['rating']>='0.21' AND $us['rating']<'0.50'){
 	$status = 'Продвинутый';
