@@ -28,6 +28,7 @@ $Filter = new Filter;
 	<link rel="stylesheet" type="text/css" href="/design/css/med/style.css">
 	<link rel="stylesheet" type="text/css" href="/design/css/ef.css">
 	<link rel="shortcut icon" href="/design/images/favicon.ico" type="image/x-icon">
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
 	<style type="text/css">
 		a.button1 {
 			display: inline-block;
@@ -58,6 +59,21 @@ $Filter = new Filter;
 		}
 
 	</style>
+	<script>
+		
+		$(document).ready(function() {		
+			setInterval(runIt, 1000);
+			var _in = 0.5;
+			var _out = 0.5;
+						
+			function runIt () {
+				$('.blink').fadeOut( 1000 / _in ).fadeIn( 1000 / _out );
+			}
+						
+			runIt();
+		});
+	
+	</script>
 </head>
 <body>
 	<?if(isset($menu)){?>

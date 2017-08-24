@@ -96,6 +96,9 @@ function nick($id){
 	}else{
 		$nick = '<a href="/us'.$us['id'].'" style="text-decoration: none; color: black;"><b>'.$Filter->output($us['nick']).'</b></a>';
 	}
+	if($us['flashing'] == 1){
+		$nick = '<span class="blink" style="display: inline;">'.$nick.'</span>';
+	}
 	if($us['admin'] == 1){
 		$st = 'мд';
 	}elseif($us['admin'] == 2){
@@ -112,7 +115,6 @@ function nick($id){
 	if($us['scam']==1){
 		$nick .= " [<font color='red'><b>мошенник</b></font>]";
 	}
-
 	$out = $icon.$nick;
 	return $out;
 }
