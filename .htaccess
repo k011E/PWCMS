@@ -237,3 +237,4 @@ RewriteRule ^billing/services/gradient/?$ modules/billing/services/gradient.php 
 RewriteRule ^billing/services/gradient/delete/?$ modules/billing/services/gradient.php?del [L,QSA]
 RewriteRule ^billing/services/status/?$ modules/billing/services/status.php [L,QSA]
 RewriteRule ^billing/services/flashing/?$ modules/billing/services/flashing.php [L,QSA]
+RewriteRule ^billing/services/attachment/?$ modules/billing/services/attachment.php [L,QSA]

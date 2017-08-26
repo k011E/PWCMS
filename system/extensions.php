@@ -24,4 +24,8 @@ if(isset($_COOKIE['tocken'])){
 }
 
 $db->query("DELETE FROM `repass` WHERE `time`<".(time()-86400)." OR `activation`=1");
+$query = $db->query("SELECT `id_thema` FROM `billing_attachment_themes` WHERE `time_end`<".time()."");
+while ($th = $query->fetch_assoc()) {
+	$db->query("UPDATE `forum_t` SET `type`=2 WHERE `id`=".$th['id_thema']."");
+}
 ?>
