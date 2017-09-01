@@ -238,3 +238,4 @@ RewriteRule ^billing/services/gradient/delete/?$ modules/billing/services/gradie
 RewriteRule ^billing/services/status/?$ modules/billing/services/status.php [L,QSA]
 RewriteRule ^billing/services/flashing/?$ modules/billing/services/flashing.php [L,QSA]
 RewriteRule ^billing/services/attachment/?$ modules/billing/services/attachment.php [L,QSA]
+RewriteRule ^billing/services/ads/?$ modules/billing/services/ads.php [L,QSA]
